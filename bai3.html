@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input type="text" id="monhoc" placeholder="nhập tên môn học">
+    <button id="btn">Thêm môn học</button>
+
+    <ol id="danhsach"></ol>
+
+    <script>
+        document.getElementById("btn").onclick = function () {
+            let ten = document.getElementById("monhoc").value;
+            if (ten == "") {
+                alert("tên môn học không được để trống!");
+            } else {
+                let item = document.createElement("li");
+                item.innerText = ten;
+                document.getElementById("danhsach").appendChild(item);
+                document.getElementById("monhoc").value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

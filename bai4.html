@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input type="text" id="email">
+    <p id="result"></p>
+    <button id="check">check</button>
+
+    <script>
+        document.getElementById("check").onclick = function () {
+            let email = document.getElementById("email").value;
+            let kq = document.getElementById("result");
+            if (email.includes("@") && (email.endsWith(".com") || email.endsWith(".vn"))) {
+                kq.innerText = "email hợp lệ!";
+                kq.style.color = "green";
+            } else {
+                kq.innerText = "email không hợp lệ!";
+                kq.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

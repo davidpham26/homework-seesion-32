@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button id="btn">Bấm vào tôi</button>
+    <p id="count">Số lần bấm: 0</p>
+
+    <script>
+        let dem = 0;
+        document.getElementById("btn").onclick = function () {
+            dem++;
+            document.getElementById("count").innerText = "Số lần bấm: " + dem;
+        }
+    </script>
+
+</body>
+
+</html>

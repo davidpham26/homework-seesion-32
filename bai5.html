@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List K24_PTIT</title>
+    <style>
+        body {
+            background: #f2f2f2;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #taskInput {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #addBtn {
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .deleteBtn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>To-Do List K24_PTIT</h2>
+        <input type="text" id="taskInput" placeholder="Nhập nhiệm vụ...">
+        <button id="addBtn">Thêm</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        let addBtn = document.getElementById('addBtn');
+        let taskInput = document.getElementById('taskInput');
+        let taskList = document.getElementById('taskList');
+
+        addBtn.onclick = function () {
+            let task = taskInput.value.trim();
+            if (task != "") {
+                let li = document.createElement('li');
+                li.innerHTML = task + ' <button class="deleteBtn">X</button>';
+                taskList.appendChild(li);
+                taskInput.value = "";
+
+                let deleteBtn = li.querySelector('.deleteBtn');
+                deleteBtn.onclick = function () {
+                    let confirmDelete = confirm("Bạn có chắc muốn xóa không?");
+                    if (confirmDelete) {
+                        taskList.removeChild(li);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

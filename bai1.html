@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="box1">
+        <button id="btn1">Đổi màu nền</button>
+    </div>
+
+    <div class="box" id="box2">
+        <button id="btn2">Đổi màu nền</button>
+    </div>
+
+    <script>
+        function doiMau(idBox) {
+            let colors = ["red", "blue", "green", "yellow", "pink"];
+            let box = document.getElementById(idBox);
+            let index = Math.floor(Math.random() * colors.length);
+            box.style.backgroundColor = colors[index];
+        }
+
+        document.getElementById("btn1").onclick = function () {
+            doiMau("box1");
+        }
+        document.getElementById("btn2").onclick = function () {
+            doiMau("box2");
+        }
+    </script>
+
+</body>
+
+</html>
